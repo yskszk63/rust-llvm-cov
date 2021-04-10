@@ -14,5 +14,5 @@ jobs:
           profile: minimal
           components: llvm-tools-preview
       - name: test run
-        uses: yskszk63/rust-llvm-cov
+        uses: yskszk63/rust-llvm-cov@HEAD
 # vim: set ts=2 sw=2 sts=2:
