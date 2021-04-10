@@ -7,5 +7,5 @@ mkdirSync('~/.local/bin', { recursive: true });
 const curl = spawn('curl', ['-sSL', CARGO_LLVM_COV_URL], { stdio: ['ignore', 'pipe', 'inherit'] });
 const tar = spawn('tar', ['zxf', '-', '-C', '~/.local/bin'], { stdio: [curl.stdout, 'inherit', 'inherit'] });
 tar.on('end', _ => {
-    spawn('cargo', ['llvm-cov'], { env: { PATH: `${~/.local/bin:process.env['PATH']}` } });
+    spawn('cargo', ['llvm-cov'], { env: { PATH: `~/.local/bin:${process.env['PATH']}` } });
 });
