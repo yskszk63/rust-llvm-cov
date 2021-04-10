@@ -2,7 +2,7 @@
 
 set -e
 
-CARGO_LLVM_COV_URL = 'https://github.com/taiki-e/cargo-llvm-cov/releases/download/v0.1.0-alpha.2/cargo-llvm-cov-x86_64-unknown-linux-musl.tar.gz'
+CARGO_LLVM_COV_URL='https://github.com/taiki-e/cargo-llvm-cov/releases/download/v0.1.0-alpha.2/cargo-llvm-cov-x86_64-unknown-linux-musl.tar.gz'
 
 mkdir -p ~/.local/bin
 curl -sSL $CARGO_LLVM_COV_URL | tar xf - -C ~/.local/bin
