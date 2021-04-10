@@ -12,6 +12,7 @@ jobs:
           toolchain: nightly
           override: true
           profile: minimal
+          components: llvm-tools-preview
       - name: test run
-        uses: ./
+        uses: yskszk63/rust-llvm-cov
 # vim: set ts=2 sw=2 sts=2:
