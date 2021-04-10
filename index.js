@@ -21,4 +21,4 @@ const cargo = spawnSync(
     });
 if (cargo.code) {
     core.setFailed(`Failed to run cargo llvm-cov: ${code}`);
-});
+};
