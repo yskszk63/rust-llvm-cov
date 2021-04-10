@@ -1,3 +1,4 @@
+const { setFailed } = require('@actions/core');
 const { exec } = require('@actions/exec');
 
-await exec("./setup.sh");
+exec("./setup.sh").catch(setFailed);
