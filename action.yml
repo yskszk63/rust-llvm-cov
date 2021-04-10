@@ -2,5 +2,4 @@ name: 'Rust llvm cov'
 description: 'Report coverage using llvm perfdata'
 runs:
   using: 'node12'
-  pre: 'setup.js'
   main: 'index.js'
