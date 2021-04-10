@@ -1,0 +1,12 @@
+on:
+    - push
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: test run
+        uses: ./
+# vim: set ts=2 sw=2 sts=2:
