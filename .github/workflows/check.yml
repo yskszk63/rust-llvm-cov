@@ -32,7 +32,7 @@ jobs:
         run: cargo llvm-cov
       - name: Collect into lcov.
         run: |
-          OBJECTS=$(target/llvm-cov-target/debug/deps/*|grep -ve'\.d$'|xargs -n1 echo -object)
+          OBJECTS="$(target/llvm-cov-target/debug/deps/*|grep -ve'\.d$'|xargs -n1 echo -object)"
           cargo cov -- export -Xdemangler=rustfilt -instr-profile=target/llvm-cov-target/rust-llvm-cov.profdata -format=lcov --show-instantiation-summary=false $OBJECTS > coverage.lcov
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v1
