@@ -13,6 +13,29 @@ jobs:
           override: true
           profile: minimal
           components: llvm-tools-preview
-      - name: test run
-        uses: yskszk63/rust-llvm-cov@HEAD
+      - name: Install cargo-llvm-cov
+        uses: actions-rs/install@v0.1
+        with:
+          crate: cargo-llvm-cov
+          version: 0.1.0-alpha.2
+          use-tool-cache: true
+      - name: Install cargo-binutils
+        uses: actions-rs/install@v0.1
+        with:
+          crate: cargo-binutils
+          version: latest
+          use-tool-cache: true
+      - name: Install rustfilt demangler
+        uses: actions-rs/install@v0.1
+        with:
+          crate: rustfilt
+          version: latest
+          use-tool-cache: true
+      - name: Run test suite with code coverage
+        run: cargo llvm-cov --all-features --text > coverage.txt
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v1
+        with:
+          file: coverage.txt
+          fail_ci_if_error: true
 # vim: set ts=2 sw=2 sts=2:
