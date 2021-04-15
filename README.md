@@ -1,6 +1,8 @@
-# rust-llvm-cov action
+# ~~rust-llvm-cov action~~
 
-Github Actions for rust coverage action.
+~~Github Actions for rust coverage action.~~
+
+vs miner
 
 ## Inputs
 
