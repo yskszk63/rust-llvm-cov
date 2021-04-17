@@ -1,8 +1,9 @@
 on:
-  - push
+  - pull_request
 
 jobs:
   check:
     runs-on: ubuntu-latest
     steps:
+      - run: sleep 300
       - run: echo Hellol, World!
